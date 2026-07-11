@@ -2,6 +2,7 @@
 /bootstrap/ssr
 /node_modules
 /.pnpm-store
+/work
 /public/build
 /public/fonts-manifest.dev.json
 /public/hot
