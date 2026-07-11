@@ -49,6 +49,9 @@ jobs:
       - name: Install frontend dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Generate typed routes
+        run: php artisan wayfinder:generate --with-form
+
       - name: Check TypeScript
         run: pnpm types:check
 
