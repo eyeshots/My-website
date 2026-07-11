@@ -46,15 +46,6 @@ jobs:
           sed -i 's/^DB_CONNECTION=.*/DB_CONNECTION=sqlite/' .env
           sed -i 's|^DB_DATABASE=.*|DB_DATABASE=database/database.sqlite|' .env
 
-      - name: Run database migrations
-        run: php artisan migrate --force
-
-      - name: Run PHP tests
-        run: php artisan test
-
-      - name: Check PHP formatting
-        run: vendor/bin/pint --test
-
       - name: Install frontend dependencies
         run: pnpm install --frozen-lockfile
 
@@ -66,3 +57,12 @@ jobs:
 
       - name: Build production assets
         run: pnpm build
+
+      - name: Run database migrations
+        run: php artisan migrate --force
+
+      - name: Run PHP tests
+        run: php artisan test
+
+      - name: Check PHP formatting
+        run: vendor/bin/pint --test
