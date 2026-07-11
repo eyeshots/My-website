@@ -178,11 +178,6 @@ return [
             // 'window' => 0
         ]),
         /* @end-chisel-2fa */
-        /* @chisel-passkeys */
-        Features::passkeys([
-            'confirmPassword' => true,
-        ]),
-        /* @end-chisel-passkeys */
     ],
 
 ];

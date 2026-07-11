@@ -21,12 +21,6 @@ class SecurityTest extends TestCase
             'confirm' => true,
             'confirmPassword' => true,
         ]);
-        /* @chisel-passkeys */
-        Features::passkeys([
-            'confirmPassword' => true,
-        ]);
-        /* @end-chisel-passkeys */
-
         $user = User::factory()->create();
 
         $this->actingAs($user)
@@ -37,7 +31,7 @@ class SecurityTest extends TestCase
             ->assertInertia(fn (Assert $page) => $page
                 ->component('settings/security')
                 /* @chisel-passkeys */
-                ->where('canManagePasskeys', true)
+                ->where('canManagePasskeys', false)
                 ->where('passkeys', [])
                 /* @end-chisel-passkeys */
                 ->where('canManageTwoFactor', true)
